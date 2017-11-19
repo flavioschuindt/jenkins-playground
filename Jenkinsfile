@@ -50,9 +50,11 @@ pipeline {
 
     post {
         always {
-            docker.image('jenkins-playground/hellonode:latest').withRun('-p 8000:8000') {
-                sh 'echo "App running!"'
-            }
+            script {
+                docker.image('jenkins-playground/hellonode:latest').withRun('-p 8000:8000') {
+                    sh 'echo "App running!"'
+                }
+            } 
         }
     }
 }
