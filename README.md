@@ -1,2 +1,2 @@
 # jenkins-playground
-cool stuff using jenkins, docker, etc.
+Jenkins playground - cool stuff using jenkins, docker, etc.
