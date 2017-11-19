@@ -50,11 +50,16 @@ pipeline {
 
     post {
         always {
-            script {
+            sh '''#!/bin/bash
+                echo "Starting app in container"
+                docker run -d -p 8000:8000 local.registry:5000/jenkins-playground/hellonode:${BUILD_NUMBER}
+                echo "App started!"
+                '''
+            /*script {
                 docker.image('jenkins-playground/hellonode:latest').withRun('-p 8000:8000') {
                     sh 'echo "App running!"'
                 }
-            } 
+            }*/ 
         }
     }
 }
