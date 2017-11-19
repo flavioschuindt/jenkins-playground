@@ -1,8 +1,7 @@
 #!groovy​
+def app
 pipeline {
     agent any
-
-    def app
 
     node {
         stages {
